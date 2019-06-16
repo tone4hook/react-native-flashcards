@@ -58,7 +58,7 @@ class NewCard extends Component {
 				<Text style={[styles.textCenter, styles.heading]}>
 					Add New Card
 				</Text>
-				{Platform.OS === "ios" ? (
+				{Platform.OS === "ios" || Platform.OS === "web" ? (
 					<View>
 						<UserInput
 							placeholder={"Enter the question here..."}
@@ -87,34 +87,34 @@ class NewCard extends Component {
 						/>
 					</View>
 				) : (
-					<View>
-						<UserInput
-							placeholder={"Enter the question here..."}
-							onChange={this.handleOnChangeQuestion.bind(this)}
-							value={this.state.question}
-							style={inputStyles.androidInput}
-						/>
-						<UserInput
-							placeholder={"Enter the answer here..."}
-							onChange={this.handleOnChangeAnswer.bind(this)}
-							value={this.state.answer}
-							style={inputStyles.androidInput}
-						/>
-						<SubmitButton
-							onPress={this.handleSubmit.bind(this)}
-							buttonText={"Submit"}
-							style={[
-								{ backgroundColor: Colors.info },
-								buttonStyles.androidBtn
-							]}
-							textStyle={[
-								{ color: Colors.light },
-								typographyStyle.paperFontTitle,
-								utils.center
-							]}
-						/>
-					</View>
-				)}
+						<View>
+							<UserInput
+								placeholder={"Enter the question here..."}
+								onChange={this.handleOnChangeQuestion.bind(this)}
+								value={this.state.question}
+								style={inputStyles.androidInput}
+							/>
+							<UserInput
+								placeholder={"Enter the answer here..."}
+								onChange={this.handleOnChangeAnswer.bind(this)}
+								value={this.state.answer}
+								style={inputStyles.androidInput}
+							/>
+							<SubmitButton
+								onPress={this.handleSubmit.bind(this)}
+								buttonText={"Submit"}
+								style={[
+									{ backgroundColor: Colors.info },
+									buttonStyles.androidBtn
+								]}
+								textStyle={[
+									{ color: Colors.light },
+									typographyStyle.paperFontTitle,
+									utils.center
+								]}
+							/>
+						</View>
+					)}
 			</KeyboardAvoidingView>
 		);
 	}

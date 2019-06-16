@@ -15,8 +15,22 @@ class DeckItem extends Component {
             const cardsText = cards === 1 ? `${cards} card` : `${cards} cards`;
             return (
                 <View style={styles.container}>
-                    <Text style={{}}>{deckKey}</Text>
-                    <Text style={{}}>{cardsText}</Text>
+                    <Text style={[
+                        typographyStyle.paperFontDisplay3,
+                        utils.center,
+                        { color: Colors.darkerSecondary }
+                    ]}
+                    >
+                        {deckKey}
+                    </Text>
+                    <Text style={[
+                        typographyStyle.paperFontDisplay1,
+                        utils.center,
+                        { color: Colors.secondary }
+                    ]}
+                    >
+                        {cardsText}
+                    </Text>
                 </View>
             );
         }

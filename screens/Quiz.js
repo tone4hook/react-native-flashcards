@@ -151,16 +151,16 @@ class Quiz extends Component {
                                 {questions[count].answer}
                             </Text>
                         ) : (
-                            <Text
-                                style={[
-                                    styles.textCenter,
-                                    typographyStyle.paperFontDisplay1,
-                                    { color: Colors.secondary }
-                                ]}
-                            >
-                                {questions[count].question}
-                            </Text>
-                        )}
+                                <Text
+                                    style={[
+                                        styles.textCenter,
+                                        typographyStyle.paperFontDisplay1,
+                                        { color: Colors.secondary }
+                                    ]}
+                                >
+                                    {questions[count].question}
+                                </Text>
+                            )}
                         {Platform.OS === "ios" ? (
                             <View>
                                 <SubmitButton
@@ -201,45 +201,45 @@ class Quiz extends Component {
                                 />
                             </View>
                         ) : (
-                            <View>
-                                <SubmitButton
-                                    onPress={this.handleFlipCard.bind(this)}
-                                    buttonText={buttonText}
-                                    style={{ marginBottom: 20 }}
-                                    textStyle={[
-                                        { color: Colors.primary },
-                                        typographyStyle.paperFontTitle,
-                                        utils.center
-                                    ]}
-                                />
-                                <SubmitButton
-                                    onPress={this.handleCorrect.bind(this)}
-                                    buttonText={"Correct"}
-                                    style={[
-                                        buttonStyles.androidBtn,
-                                        { backgroundColor: Colors.info }
-                                    ]}
-                                    textStyle={[
-                                        { color: Colors.light },
-                                        typographyStyle.paperFontTitle,
-                                        utils.center
-                                    ]}
-                                />
-                                <SubmitButton
-                                    onPress={this.handleIncorrect.bind(this)}
-                                    buttonText={"Incorrect"}
-                                    style={[
-                                        buttonStyles.androidBtn,
-                                        { backgroundColor: Colors.danger }
-                                    ]}
-                                    textStyle={[
-                                        { color: Colors.light },
-                                        typographyStyle.paperFontTitle,
-                                        utils.center
-                                    ]}
-                                />
-                            </View>
-                        )}
+                                <View>
+                                    <SubmitButton
+                                        onPress={this.handleFlipCard.bind(this)}
+                                        buttonText={buttonText}
+                                        style={{ marginBottom: 20 }}
+                                        textStyle={[
+                                            { color: Colors.primary },
+                                            typographyStyle.paperFontTitle,
+                                            utils.center
+                                        ]}
+                                    />
+                                    <SubmitButton
+                                        onPress={this.handleCorrect.bind(this)}
+                                        buttonText={"Correct"}
+                                        style={[
+                                            buttonStyles.androidBtn,
+                                            { backgroundColor: Colors.info }
+                                        ]}
+                                        textStyle={[
+                                            { color: Colors.light },
+                                            typographyStyle.paperFontTitle,
+                                            utils.center
+                                        ]}
+                                    />
+                                    <SubmitButton
+                                        onPress={this.handleIncorrect.bind(this)}
+                                        buttonText={"Incorrect"}
+                                        style={[
+                                            buttonStyles.androidBtn,
+                                            { backgroundColor: Colors.danger }
+                                        ]}
+                                        textStyle={[
+                                            { color: Colors.light },
+                                            typographyStyle.paperFontTitle,
+                                            utils.center
+                                        ]}
+                                    />
+                                </View>
+                            )}
                     </View>
                 </View>
             );

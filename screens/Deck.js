@@ -37,7 +37,7 @@ class Deck extends Component {
             return <ActivityIndicator size="large" color={Colors.success} />;
         } else {
             return (
-                <Animated.View style={[styles.container, { opacity }]}>
+                <View style={[styles.container]}>
                     <DeckItem deckKey={deck.title} />
                     {Platform.OS === "ios" ? (
                         <View>
@@ -91,58 +91,58 @@ class Deck extends Component {
                             </TouchableOpacity>
                         </View>
                     ) : (
-                        <View>
-                            <SubmitButton
-                                onPress={() =>
-                                    this.props.navigation.navigate("NewCard")
-                                }
-                                buttonText={"Add Card"}
-                                style={[
-                                    buttonStyles.androidBtn,
-                                    { backgroundColor: Colors.warning }
-                                ]}
-                                textStyle={[
-                                    { color: Colors.light },
-                                    typographyStyle.paperFontTitle,
-                                    utils.center
-                                ]}
-                            />
-                            <SubmitButton
-                                onPress={() =>
-                                    this.props.navigation.navigate("Quiz")
-                                }
-                                buttonText={"Start Quiz"}
-                                style={[
-                                    buttonStyles.androidBtn,
-                                    { backgroundColor: Colors.success }
-                                ]}
-                                textStyle={[
-                                    { color: Colors.light },
-                                    typographyStyle.paperFontTitle,
-                                    utils.center
-                                ]}
-                            />
-                            <TouchableOpacity
-                                onPress={this.handleDelete.bind(this)}
-                                style={[
-                                    styles.alignSelfCenter,
-                                    { marginTop: 50 }
-                                ]}
-                            >
-                                <Text
+                            <View>
+                                <SubmitButton
+                                    onPress={() =>
+                                        this.props.navigation.navigate("NewCard")
+                                    }
+                                    buttonText={"Add Card"}
                                     style={[
-                                        { padding: 10 },
+                                        buttonStyles.androidBtn,
+                                        { backgroundColor: Colors.warning }
+                                    ]}
+                                    textStyle={[
+                                        { color: Colors.light },
                                         typographyStyle.paperFontTitle,
-                                        { color: Colors.danger },
                                         utils.center
                                     ]}
+                                />
+                                <SubmitButton
+                                    onPress={() =>
+                                        this.props.navigation.navigate("Quiz")
+                                    }
+                                    buttonText={"Start Quiz"}
+                                    style={[
+                                        buttonStyles.androidBtn,
+                                        { backgroundColor: Colors.success }
+                                    ]}
+                                    textStyle={[
+                                        { color: Colors.light },
+                                        typographyStyle.paperFontTitle,
+                                        utils.center
+                                    ]}
+                                />
+                                <TouchableOpacity
+                                    onPress={this.handleDelete.bind(this)}
+                                    style={[
+                                        styles.alignSelfCenter,
+                                        { marginTop: 50 }
+                                    ]}
                                 >
-                                    Delete Deck
+                                    <Text
+                                        style={[
+                                            { padding: 10 },
+                                            typographyStyle.paperFontTitle,
+                                            { color: Colors.danger },
+                                            utils.center
+                                        ]}
+                                    >
+                                        Delete Deck
                                 </Text>
-                            </TouchableOpacity>
-                        </View>
-                    )}
-                </Animated.View>
+                                </TouchableOpacity>
+                            </View>
+                        )}
+                </View>
             );
         }
     }

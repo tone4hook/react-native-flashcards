@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { secondary } from "./Colors";
+import Colors from "./Colors";
 
 export const buttonStyles = StyleSheet.create({
 	androidBtn: {
@@ -9,7 +9,7 @@ export const buttonStyles = StyleSheet.create({
 		padding: 10,
 		borderWidth: 0,
 		borderRadius: 5,
-		shadowColor: secondary,
+		shadowColor: Colors.secondary,
 		shadowOffset: { width: 0, height: 4 },
 		shadowOpacity: 1,
 		shadowRadius: 3,

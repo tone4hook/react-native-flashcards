@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { secondary } from "./Colors";
+import Colors from "./Colors";
 
 export const inputStyles = StyleSheet.create({
 	iosInput: {
@@ -7,7 +7,7 @@ export const inputStyles = StyleSheet.create({
 		width: Dimensions.get("window").width * 0.8,
 		height: 60,
 		margin: 20,
-		borderColor: secondary,
+		borderColor: Colors.secondary,
 		borderWidth: 1,
 		fontSize: 16,
 		textAlign: "center"

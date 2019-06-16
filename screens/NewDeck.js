@@ -49,7 +49,14 @@ class NewDeck extends Component {
                 behavior="padding"
                 enabled
             >
-                <Text style={{}}>Add New Deck</Text>
+                <Text style={[
+                    utils.center,
+                    typographyStyle.paperFontHeadline,
+                    { color: Colors.darkerSecondary }
+                ]}
+                >
+                    Add New Deck
+                </Text>
                 {Platform.OS === "ios" ? (
                     <View>
                         <UserInput
@@ -73,28 +80,28 @@ class NewDeck extends Component {
                         />
                     </View>
                 ) : (
-                    <View>
-                        <UserInput
-                            placeholder={"Enter the deck title here..."}
-                            onChange={this.handleOnChange.bind(this)}
-                            value={this.state.text}
-                            style={inputStyles.androidInput}
-                        />
-                        <SubmitButton
-                            onPress={this.handleSubmit.bind(this)}
-                            buttonText={"Submit"}
-                            style={[
-                                { backgroundColor: Colors.info },
-                                buttonStyles.androidBtn
-                            ]}
-                            textStyle={[
-                                { color: Colors.light },
-                                typographyStyle.paperFontTitle,
-                                utils.center
-                            ]}
-                        />
-                    </View>
-                )}
+                        <View>
+                            <UserInput
+                                placeholder={"Enter the deck title here..."}
+                                onChange={this.handleOnChange.bind(this)}
+                                value={this.state.text}
+                                style={inputStyles.androidInput}
+                            />
+                            <SubmitButton
+                                onPress={this.handleSubmit.bind(this)}
+                                buttonText={"Submit"}
+                                style={[
+                                    { backgroundColor: Colors.info },
+                                    buttonStyles.androidBtn
+                                ]}
+                                textStyle={[
+                                    { color: Colors.light },
+                                    typographyStyle.paperFontTitle,
+                                    utils.center
+                                ]}
+                            />
+                        </View>
+                    )}
             </KeyboardAvoidingView>
         );
     }
