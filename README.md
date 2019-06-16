@@ -7,7 +7,7 @@ This project was bootstrapped with [Expo CLI](https://github.com/expo/expo-cli).
 
 ### EXPO SNACK
 
--   [Expo Snack]()
+-   [Expo Snack](https://tone4hook.github.io/react-native-flashcards/)
 
 ### Prerequisites
 
