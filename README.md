@@ -1,24 +1,26 @@
 # React Native Flash Cards
-*A React Native flash card app that allows you to create flash cards and manage them in decks. Test yourself by taking quizzes on the decks you create.*
+
+_A React Native flash card app that allows you to create flash cards and manage them in decks. Test yourself by taking quizzes on the decks you create._
 
 Built using React Native, Redux, and Redux Thunk.
 This project was bootstrapped with [Expo CLI](https://github.com/expo/expo-cli).
 
 ### Prerequisites
 
-* Node.js >= v10
-* [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli)
+-   Node.js >= v10
+-   [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli)
 
 See the [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli) documentation on installation instructions.
 
 ## Getting Started
 
 Download, clone, or fork the repo.
-Using Terminal or Command Prompt navigate to the *react-native-flashcards* directory.
-* *npm update --save*  to update all dependencies
-* *npm update --save-dev*  to update all devDependencies
-* *npm start* to run **expo start**
-* *npm test* to run Jest tests
+Using Terminal or Command Prompt navigate to the _react-native-flashcards_ directory.
+
+-   _npm update --save_ to update all dependencies
+-   _npm update --save-dev_ to update all devDependencies
+-   _npm start_ to run **expo start** or **expo start -w** for web app
+-   _npm test_ to run Jest tests
 
 ## Screen Shots
 
@@ -34,22 +36,23 @@ Using Terminal or Command Prompt navigate to the *react-native-flashcards* direc
 
 ## About Example Data
 
-*The data.js file (utils/data.js) contains dummy data to display example decks of flash cards.*
+_The data.js file (utils/data.js) contains dummy data to display example decks of flash cards._
 
-*Edit api.js file (utils/api.js) to control initial data(decks) that go to storage.*
+_Edit api.js file (utils/api.js) to control initial data(decks) that go to storage._
+
 ```javascript
 // utils/api.js
 export function getDecks() {
-	return AsyncStorage.getItem(STORAGE_KEY)
-		.then(results => {
-			return results === null
-				? setDummyData(results)
-				: JSON.parse(results);
-		})
-		.catch(error => {
-			console.log("AsyncStorage call error");
-			alert(error.message);
-		});
+    return AsyncStorage.getItem(STORAGE_KEY)
+        .then(results => {
+            return results === null
+                ? setDummyData(results)
+                : JSON.parse(results);
+        })
+        .catch(error => {
+            console.log("AsyncStorage call error");
+            alert(error.message);
+        });
 }
 ```
 
