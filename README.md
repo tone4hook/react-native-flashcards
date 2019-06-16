@@ -5,6 +5,11 @@ _A React Native flash card app that allows you to create flash cards and manage 
 Built using React Native, Redux, and Redux Thunk.
 This project was bootstrapped with [Expo CLI](https://github.com/expo/expo-cli).
 
+### EXPO SNACK
+
+<div data-snack-id="@git/github.com/tone4hook/react-native-flashcards" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="light" style="overflow:hidden;background:#fafafa;border:1px solid rgba(0,0,0,.08);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.io/embed.js"></script>
+
 ### Prerequisites
 
 -   Node.js >= v10
