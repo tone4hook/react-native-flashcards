@@ -3,7 +3,8 @@ import { Platform } from "react-native";
 import {
     createStackNavigator,
     createBottomTabNavigator,
-    createMaterialTopTabNavigator
+    createMaterialTopTabNavigator,
+    createSwitchNavigator
 } from "react-navigation";
 import TabBarIcon from "../components/TabBarIcon";
 import Deck from "../screens/Deck";
@@ -66,43 +67,86 @@ const Tabs = createBottomTabNavigator(
     }
 );
 
-const MainStack = createStackNavigator({
-    Home: {
-        screen: Platform.OS === "ios" ? Tabs : TopTabs,
-        navigationOptions: {
-            title: "My Decks",
-            headerTitleStyle: Header.headerTitleStyle,
-            headerTintColor: Header.headerTintColor,
-            headerStyle: Header.headerStyle
-        }
-    },
-    Deck: {
-        screen: Deck,
-        navigationOptions: {
-            title: "Deck",
-            headerTitleStyle: Header.headerTitleStyle,
-            headerTintColor: Header.headerTintColor,
-            headerStyle: Header.headerStyle
-        }
-    },
-    Quiz: {
-        screen: Quiz,
-        navigationOptions: {
-            title: "Quiz",
-            headerTitleStyle: Header.headerTitleStyle,
-            headerTintColor: Header.headerTintColor,
-            headerStyle: Header.headerStyle
-        }
-    },
-    NewCard: {
-        screen: NewCard,
-        navigationOptions: {
-            title: "Add Card",
-            headerTitleStyle: Header.headerTitleStyle,
-            headerTintColor: Header.headerTintColor,
-            headerStyle: Header.headerStyle
-        }
-    }
-});
+const MainStack =
+    Platform.OS !== "web"
+        ? createStackNavigator({
+              Home: {
+                  screen: Platform.OS === "ios" ? Tabs : TopTabs,
+                  navigationOptions: {
+                      title: "My Decks",
+                      headerTitleStyle: Header.headerTitleStyle,
+                      headerTintColor: Header.headerTintColor,
+                      headerStyle: Header.headerStyle
+                  }
+              },
+              Deck: {
+                  screen: Deck,
+                  navigationOptions: {
+                      title: "Deck",
+                      headerTitleStyle: Header.headerTitleStyle,
+                      headerTintColor: Header.headerTintColor,
+                      headerStyle: Header.headerStyle
+                  }
+              },
+              Quiz: {
+                  screen: Quiz,
+                  navigationOptions: {
+                      title: "Quiz",
+                      headerTitleStyle: Header.headerTitleStyle,
+                      headerTintColor: Header.headerTintColor,
+                      headerStyle: Header.headerStyle
+                  }
+              },
+              NewCard: {
+                  screen: NewCard,
+                  navigationOptions: {
+                      title: "Add Card",
+                      headerTitleStyle: Header.headerTitleStyle,
+                      headerTintColor: Header.headerTintColor,
+                      headerStyle: Header.headerStyle
+                  }
+              }
+          })
+        : createSwitchNavigator(
+              {
+                  Home: {
+                      screen: TopTabs,
+                      navigationOptions: {
+                          title: "My Decks",
+                          headerTitleStyle: Header.headerTitleStyle,
+                          headerTintColor: Header.headerTintColor,
+                          headerStyle: Header.headerStyle
+                      }
+                  },
+                  Deck: {
+                      screen: Deck,
+                      navigationOptions: {
+                          title: "Deck",
+                          headerTitleStyle: Header.headerTitleStyle,
+                          headerTintColor: Header.headerTintColor,
+                          headerStyle: Header.headerStyle
+                      }
+                  },
+                  Quiz: {
+                      screen: Quiz,
+                      navigationOptions: {
+                          title: "Quiz",
+                          headerTitleStyle: Header.headerTitleStyle,
+                          headerTintColor: Header.headerTintColor,
+                          headerStyle: Header.headerStyle
+                      }
+                  },
+                  NewCard: {
+                      screen: NewCard,
+                      navigationOptions: {
+                          title: "Add Card",
+                          headerTitleStyle: Header.headerTitleStyle,
+                          headerTintColor: Header.headerTintColor,
+                          headerStyle: Header.headerStyle
+                      }
+                  }
+              },
+              { initialRouteName: "Home" }
+          );
 
 export default MainStack;
